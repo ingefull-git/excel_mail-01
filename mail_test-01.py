@@ -1,7 +1,22 @@
+import xlrd
 import os
 import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
+
+
+path = "C:\\Users\\rulo\\Desktop\\test.xlsx"
+
+book = xlrd.open_workbook(path)
+sheet = book.sheet_by_index(0)
+mails = []
+for r in range(1, sheet.nrows):
+    mails.append(sheet.cell_value(r, 1))
+
+
+print(sheet.nrows)
+print(sheet.ncols)
+print(mails)
 
 MY_ADDRESS = os.environ.get('EMAIL_USER')
 MY_PASS = os.environ.get('EMAIL_PASS')
@@ -1233,10 +1248,10 @@ Explain why your subscribers are receiving this email.</p>
 
 """, "html"))
 
-contactos = ['info@tspcontrols.com', 'rsosa.ingefull@gmail.com',
-             'netfullmarket@gmail.com', 'tsptrailers@gmail.com', 'estefania.gulla@gmail.com ']
+contactos = mails
 
 if server.sendmail(MY_ADDRESS, contactos, msg.as_string()) == False:
     print("\n Mensaje no enviado...")
     server.quit()
 print("\n Mesnaje enviado OK ...!!!!!!!!")
+print("\n a los siguientes mails: ", mails)

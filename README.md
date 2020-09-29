@@ -4,8 +4,8 @@
 
 - .\venv\Scripts\activate
 
-- pip install -r requirements.txt
-
 - python -m pip install --upgrade pip
 
-- pip install xlrd==1.2.0
+- pip install -r requirements.txt
+
+- python3 excel_mail_test-01.py

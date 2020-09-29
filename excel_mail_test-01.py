@@ -69,7 +69,7 @@ for r in range(1, sheet.nrows):
         if server.sendmail(MY_ADDRESS, contactos, msg.as_string()) == False:
             print("\n Mensaje no enviado...")
             server.quit()
-        print("\n Mesnaje enviado OK ...!!!!!!!!")
+        print("\n Mensaje enviado OK ...!!!!!!!!")
 
     except Exception as e:
         print("Hubo un problema y no se pudo enviar Email..!!", e)

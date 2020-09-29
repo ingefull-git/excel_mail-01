@@ -36,7 +36,7 @@ for r in range(1, sheet.nrows):
     template = sheet.cell_value(r, col_template)
     print("\n Nombre:", nombre, "Mail:", mail, "Template:", template)
 
-    print("Mail to: ", nombre, "Email: ", mail)
+    print("\n Mail to: ", nombre, "Email: ", mail)
     MY_ADDRESS = os.environ.get('EMAIL_USER')
     MY_PASS = os.environ.get('EMAIL_PASS')
     HOST = 'mail.tspcontrols.com'

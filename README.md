@@ -8,4 +8,4 @@
 
 - pip install -r requirements.txt
 
-- python3 excel_mail_test-01.py
+- python excel_mail_test-01.py
